@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
 
         setContentView(R.layout.activity_main);
-        field1 = findViewById(R.id.textField1);
-        field2 = findViewById(R.id.textField2);
+        field1 = findViewById(R.id.inputField1);
+        field2 = findViewById(R.id.inputField2);
         field3 = findViewById(R.id.Result);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Add(View view){
-        double n1 = Integer.parseInt(field1.getText().toString());
-        double n2 = Integer.parseInt(field2.getText().toString());
+        double n1 = Double.parseDouble(field1.getText().toString());
+        double n2 = Double.parseDouble(field2.getText().toString());
         double result = n1+n2;
 
         field3.setText(String.valueOf(result));
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Subtract(View view){
-        double n1 = Integer.parseInt(field1.getText().toString());
-        double n2 = Integer.parseInt(field2.getText().toString());
+        double n1 = Double.parseDouble(field1.getText().toString());
+        double n2 = Double.parseDouble(field2.getText().toString());
         double result = n1-n2;
 
         field3.setText(String.valueOf(result));
@@ -53,23 +53,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Multiply(View view){
-        double n1 = Integer.parseInt(field1.getText().toString());
-        double n2 = Integer.parseInt(field2.getText().toString());
+        double n1 = Double.parseDouble(field1.getText().toString());
+        double n2 = Double.parseDouble(field2.getText().toString());
         double result = n1*n2;
 
-        field3.setText(String.format("%.5f", result));
+        field3.setText(String.valueOf(result));
 
     }
 
     public void Division(View view){
-        double n1 = Integer.parseInt(field1.getText().toString());
-        double n2 = Integer.parseInt(field2.getText().toString());
+        double n1 = Double.parseDouble(field1.getText().toString());
+        double n2 = Double.parseDouble(field2.getText().toString());
 
         if (n2==0){
             field3.setText("Cannot divide by 0");
             return;
         }
         double result = n1/n2;
-        field3.setText(String.format("%.5f", result));
+        field3.setText(String.valueOf(result));
     }
 }
