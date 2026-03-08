@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         field3.setText(String.valueOf(result));
 
     }
-
     public void Multiply(View view){
         double n1 = Double.parseDouble(field1.getText().toString());
         double n2 = Double.parseDouble(field2.getText().toString());
